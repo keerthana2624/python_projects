@@ -21,14 +21,14 @@ def display_board(board):
                 print("*", end="  ")
         print("\n")
 
-# def markNumber(board, card):
-#     """Marks a card as guessed if it has been picked."""
-#     for i in range(0, len(board), 4):
-#         row = board[i:i+4]
-#         for i in row:
-#             if card == i:
-#                guessed.append(i)
-#     return board
+def markNumber(board, card):
+    """Marks a card as guessed if it has been picked."""
+    for i in range(0, len(board), 4):
+        row = board[i:i+4]
+        for i in row:
+            if card == i:
+               guessed.append(i)
+    return board
 
 # def pickedCard(dic, card1, card2):
 #     """Checks if two picked cards are a matching pair."""

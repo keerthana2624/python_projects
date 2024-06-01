@@ -9,4 +9,18 @@ def add_book(books):
 books=[]
 add_book(books)
 
+def view_collection(books):
+    if not books:
+        print("No books in the collection.")
+    else:
+        for book in books:
+            print("Title:", book['title'])
+            print("Author:", book['author'])
+            print("Year:", book['year'])
+            print("Genre:", book['genre'])
+            print()
+books=[]
+books=add_book(books)
+view_collection(books)
+
  

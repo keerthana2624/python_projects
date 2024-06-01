@@ -6,10 +6,8 @@ def generateBoard():
     totalcards = cards * 2
     random.shuffle(totalcards)
     return totalcards
-# print(generateBoard())
 
-guessed = []
-def display_board(board):
+def display_board(board, guessed):
     """Displays the current state of the board, showing guessed cards and hiding unguessed ones."""
     for i in range(0, len(board), 4):
         row = board[i:i+4]
@@ -19,10 +17,8 @@ def display_board(board):
             else:
                 print("*", end="  ")
         print("\n")
-# board=generateBoard()
-# display_board(board)
 
-def markNumber(board, card):
+def markNumber(board, card, guessed):
     """Marks a card as guessed if it has been picked."""
     for i in range(0, len(board), 4):
         row = board[i:i+4]
@@ -41,3 +37,20 @@ def pickedCard(dic, card1, card2):
         print(dic[card1], dic[card2])
         print("You picked unpaired cards. Please try again.")
         return False
+
+def main():
+    board = generateBoard()
+    guessed = []
+    while len(guessed) < len(board):  
+        display_board(board, guessed) 
+        card1 = int(input("Enter the position of the first card: "))
+        card2 = int(input("Enter the position of the second card: "))
+        if pickedCard(board, card1, card2): 
+            markNumber(board, card1, guessed) 
+            markNumber(board, card2, guessed)
+    print("Game over!")
+main()
+
+
+
+

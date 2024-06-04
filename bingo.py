@@ -16,3 +16,29 @@ def displayBoard(board):
     return None
 # board=generateBoard()
 # displayBoard(board)
+
+def markNumber(board,number):
+    for i in range(5):
+        for j in range(5):
+            if number==board[i][j]:
+                board[i][j]=="x"
+            return board
+board=generateBoard() 
+displayBoard(board)
+number=9       
+# markNumber(board,number)
+
+def getUserNumber():
+    try:
+        n=int(input("enter the number"))
+        if 1<=n<101:
+            return True
+        elif n<0 and n>100:
+            print("invalid number! try again")
+        else:
+            print("please enter the valid number")
+    except:
+        print("error in try block")
+# getUserNumber()
+
+    

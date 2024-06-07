@@ -40,3 +40,53 @@ def checkWin(board):
         return board[0][2]
     return None
 # print(checkWin(board))
+
+
+def checkDraw(board):
+    for row in board:
+        if ' ' in row:
+            return False
+    return True
+# board=initializeBoard()
+# print(checkWin(board))
+
+def switchPlayer(current_player):
+    if current_player == 'X':
+        return 'O'
+    return 'X'
+
+def playTicTacToe():
+    print("Welcome to Tic-Tac-Toe!")
+    board = initializeBoard()
+    current_player = 'X'
+    
+    while True:
+        displayBoard(board)
+        print(f"Player {current_player}'s turn")
+        try:
+            row = int(input("Enter the row (0, 1, or 2): "))
+            col = int(input("Enter the column (0, 1, or 2): "))
+        except ValueError:
+            print("Invalid input. Please enter numeric values.")
+            continue
+        
+        if not makeMove(board, current_player, row, col):
+            print("Invalid move. Try again.")
+            continue
+        
+        if checkWin(board):
+            displayBoard(board)
+            print(f"Congratulations! Player {current_player} wins!")
+            break
+        
+        if checkDraw(board):
+            displayBoard(board)
+            print("The game is a draw!")
+            break
+        
+        current_player = switchPlayer(current_player)
+
+playTicTacToe()
+
+
+

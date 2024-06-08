@@ -7,8 +7,6 @@ def generateboard():
     return totalcards
 # print(generateboard())
 
-
-
 open=[]
 def displayboard(board):
     for i in range(0,len(board),4):

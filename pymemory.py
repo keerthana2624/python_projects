@@ -17,8 +17,6 @@ def displayboard(board):
             else:
                 print("*",end=' ')
         print()
-# board=generateboard()
-# displayboard(board)
 
 def pickedcard(dic,user_choice1,user_choice2):
     if dic[user_choice1]==dic[user_choice2]:

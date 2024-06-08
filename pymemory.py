@@ -25,6 +25,7 @@ def pickedcard(dic,user_choice1,user_choice2):
     else:
         print(dic[user_choice1],dic[user_choice2])
         return False
+    
 def marknumber(card):
     if card not in open:
         open.append(card)

@@ -14,7 +14,6 @@ def computerchoice():
     return random.choice(choices)
 # print(computerchoice())
 
-
 def determinewinner(user_choice, computer_choice):
     if user_choice==computer_choice:
         return 'tie'

@@ -7,6 +7,7 @@ def create_deck():
     return deck
 # print(create_deck())
 
+
 def deal_card(deck):
     return deck.pop()
 # deck=create_deck()

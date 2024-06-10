@@ -27,7 +27,6 @@ def parseQuestions(data):
     return l 
 y=parseQuestions(x)
 
-
 def startQuiz(questions):
     # print(questions)
     for d in questions:
@@ -55,6 +54,20 @@ def scoreReport(questions):
             totalScore+=d["score"]
     return totalScore
 print(scoreReport(z))
+
+def runQuiz():
+    data=loadData('questions.txt')
+    questions=parseQuestions(data)
+    q=startQuiz(questions)
+    print("total score:",scoreReport(q))
+runQuiz()
+
+
+
+
+
+
+
 
 
 

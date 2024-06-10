@@ -28,4 +28,39 @@ def parseQuestions(data):
 y=parseQuestions(x)
 
 
+def startQuiz(questions):
+    # print(questions)
+    for d in questions:
+        # print(i)
+        print(d["question_text"])
+        print(" ".join(d["choices"]))   
+        n = int(input(" enter the choice(1/2/3/4):"))
+        d["user_choice"]=n
+        if n==int(d["correct_option"]):
+            d["score"]=d["max_marks"]
+        else:
+            d["score"]=d["penalty"]
+   
+    return questions
+z=startQuiz(y)
+
+def scoreReport(questions):
+    totalScore=0
+    for d in questions:
+        if d["correct_option"]==d["user_choice"]:
+            print("correct Answer!- ", d["max_marks"])
+            totalScore+=d["score"]
+        else:
+            print("Wrong answer! -",d["penalty"])
+            totalScore+=d["score"]
+    return totalScore
+print(scoreReport(z))
+
+
+
+
+
+
+
+
 

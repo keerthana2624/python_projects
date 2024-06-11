@@ -10,3 +10,13 @@ def createcard(deck):
     return deck
 # print(createcard(cards))
 
+def dealcards(deck):
+    half_cards=len(deck)//2
+    return deck[0:half_cards:1],deck[half_cards::1]
+# deck=createcard(cards)
+# print(dealcards(deck))
+
+def cardsvalues(card):
+    return values[card]
+# card='J'
+# print(cardsvalues(card))
